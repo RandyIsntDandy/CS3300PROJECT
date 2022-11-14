@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+
 <style>
+/*Starting the styling for all the pretty stuff*/
+
 body {
   background-color: #F7F4E9;
   font-family: Arial, Helvetica, sans-serif;
@@ -25,6 +28,7 @@ p {
 
 }
 
+/*Creating the coolHeader that will look cool. this would otherwise mess with all lists.*/
 .coolHeader ul {
   list-style-type: none;
   margin: 0;
@@ -50,11 +54,37 @@ p {
   background-color: #ab6954;
 }
 
+/*Resume list that has its own CSS*/
 .resume {
   text-align: left;
   border: 2px solid black;
   margin: 10px;  
   padding: 10px;
+}
+
+/*Border for the project displays */
+.projectBorder {
+  width: 300px;
+  height: 250px;
+  border: 2px solid #D48166;
+}
+
+.specialLink a{
+
+}
+
+/*To have separate looking links for the show project button */
+.specialLink a:link, .specialLink a:visited {
+  background-color: #D48166;
+  color: white;
+  padding: 10px 93px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.specialLink a:hover, .specialLink a:active {
+  background-color: #ab6954;
 }
 
 </style>
@@ -92,19 +122,20 @@ in the BI program at UCCS.</p>
     </ul>
   </div>
 
-  <p style="color: green"><%= notice %></p>
-
-  <h1>Projects</h1>
-  
+  <p style="color: purple"><%= notice %></p>
   <div id="projects">
-    <% @projects.each do |project| %>
-      <%= render project %>
-      <p>
-        <%= link_to "Show this project", project %>
-      </p>
-    <% end %>
+    <div class="specialLink">
+      <% @projects.each do |project| %>
+        <%= render project %>
+        <p>
+          <%= link_to "Show this project", project %>
+        </p>
+      <% end %>
+      </div>
+  </div>
+  <div class="specialLink">
+    <%= link_to "New project", new_project_path %>
   </div>
   
-  <%= link_to "New project", new_project_path %>
 </body>
 </html>
