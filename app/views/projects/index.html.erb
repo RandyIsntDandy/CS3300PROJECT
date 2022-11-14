@@ -1,14 +1,110 @@
-<p style="color: green"><%= notice %></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 5 Website Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+body {
+  background-color: #F7F4E9;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-<h1>Projects</h1>
+h1 {
+  font-size: 60px;
 
-<div id="projects">
-  <% @projects.each do |project| %>
-    <%= render project %>
-    <p>
-      <%= link_to "Show this project", project %>
-    </p>
-  <% end %>
+}
+
+p {
+  font-size: 15px;
+}
+
+.coolHeader{
+
+}
+
+.coolHeader ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #D48166;
+}
+
+.coolHeader li {
+  float: left;
+}
+
+.coolHeader li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  text-font: arial;
+}
+
+.coolHeader li a:hover {
+  background-color: #ab6954;
+}
+
+.resume {
+  text-align: left;
+  border: 2px solid black;
+  margin: 10px;  
+  padding: 10px;
+}
+
+</style>
+
+</head>
+<body>
+<div class="coolHeader">
+  <ul>
+    <li><a class="active" href="#Home">Home</a></li>
+    <li><a href="#SignUp">Sign In/Up</a></li>
+    <li><a href="Projects">Projects</a><li>
+  </ul>
 </div>
 
-<%= link_to "New project", new_project_path %>
+<h1> Porfolio</h1>
+<p>A webpage for Randall Godinez studying 
+<a href="https://innovation.uccs.edu/coeas/computer-security">Computer Security</a>
+in the BI program at UCCS.</p>
+
+  <div class="resume">
+    <ul><strong>Programming Languages</strong>
+      <li> C</li>
+      <li> Java</li>
+      <li> Python </li>
+      <li> Ruby </li>
+    </ul>
+  </div> 
+
+  <div class="resume">
+    <ul><strong>Soft Skills</strong>
+      <li> Communcation</li>
+      <li> Teamwork</li>
+      <li> Adaptability </li>
+      <li> Conflict management </li>
+    </ul>
+  </div>
+
+  <p style="color: green"><%= notice %></p>
+
+  <h1>Projects</h1>
+  
+  <div id="projects">
+    <% @projects.each do |project| %>
+      <%= render project %>
+      <p>
+        <%= link_to "Show this project", project %>
+      </p>
+    <% end %>
+  </div>
+  
+  <%= link_to "New project", new_project_path %>
+</body>
+</html>
