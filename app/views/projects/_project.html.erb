@@ -1,15 +1,32 @@
+<style>
+.descriptionClass {
+  text-align: center;
+  width: 400px;
+  height: 250px;
+  border-radius: 5px;
+  background-color: #D48166;
+  border: 2px solid black;
+  margin: auto;
+  color: white;
+
+}
+
+
+</style>
 
 <div class="projectBorder">
 <div id="<%= dom_id project %>">
   <p>
-    
   <h2><strong><%= project.title %></strong></h2>
   </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= project.description %>
-  </p>
-
+  <div class="descriptionClass">
+    <p>
+      <strong>Description:</strong>
+      <p>
+      <%= project.description %>
+      </p>
+    </p>
+  </div>
 </div>
 </div>

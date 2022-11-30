@@ -1,9 +1,48 @@
-<h1>New project</h1>
+<style>
+body {
+  text-align: center;
+  background-color: #F7F4E9;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-<%= render "form", project: @project %>
+.descriptionClass {
+  text-align: center;
+  width: 400px;
+  height: 250px;
+  border-radius: 5px;
+  background-color: #D48166;
+  border: 2px solid black;
+  margin: auto;
+  color: white;
 
+}
+.format{
+  color:white;
+
+}
+
+.button{
+  background-color: #A76753;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #D48166;
+  border: 20px;
+  margin: auto;
+}
+</style>
+
+<h1>New Project</h1>
+<div class="descriptionClass">
+
+<%= render "form", project: @project, :class => "format" %>
+</div>
 <br>
 
 <div>
-  <%= link_to "Back to projects", projects_path %>
+  <%= link_to "SEE ALL PROJECTS", projects_path, :class => "button" %>
 </div>
