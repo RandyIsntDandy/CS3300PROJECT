@@ -66,12 +66,9 @@ p {
 .projectBorder {
   width: 300px;
   height: 250px;
-  border: 2px solid #D48166;
+  #border: 2px solid #D48166;
 }
 
-.specialLink a{
-
-}
 
 /*To have separate looking links for the show project button */
 .specialLink a:link, .specialLink a:visited {
@@ -131,8 +128,7 @@ in the BI program at UCCS.</p>
           <%= link_to "Show this project", project %>
         </p>
       <% end %>
-      </div>
-  </div>
+    </div>
   <div class="specialLink">
     <%= link_to "New project", new_project_path %>
   </div>

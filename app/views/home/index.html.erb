@@ -7,24 +7,180 @@
     <title>CS3300 Portfolio Project</title>
 
   </head>
-  
-  <body>
-    <div style="margin: 5% 0 0 10%;">
-    <h1>Projects</h1>   
-    <h1>CS 3300 Portfolio Project - Fall 2022</h1>
 
-      <div style="padding-left: 2rem;">
-        <h4 style="color: blue"> Randall Godinez </h3>
+  <style>
+/*Starting the styling for all the pretty stuff*/
+
+body {
+  background-color: #F7F4E9;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 60px;
+
+}
+
+p {
+  font-size: 15px;
+}
+
+.coolHeader{
+
+}
+
+/*Creating the coolHeader that will look cool. this would otherwise mess with all lists.*/
+.coolHeader ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #D48166;
+}
+
+.coolHeader li {
+  float: left;
+}
+
+.coolHeader li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  text-font: arial;
+}
+
+.coolHeader li a:hover {
+  background-color: #ab6954;
+}
+
+/*Resume list that has its own CSS*/
+.resume {
+  text-align: left;
+  border: 2px solid black;
+  margin: 10px;  
+  padding: 10px;
+}
+
+/*Border for the project displays */
+.projectBorder {
+  width: 300px;
+  height: 250px;
+  border: 2px solid #D48166;
+}
+
+
+
+/*To have separate looking links for the show project button */
+.specialLink a:link, .specialLink a:visited {
+  background-color: #D48166;
+  color: white;
+  padding: 10px 93px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.specialLink a:hover, .specialLink a:active {
+  background-color: #ab6954;
+}
+
+.button{
+  background-color: #A76753;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #D48166;
+  border: 20px;
+  margin: auto;
+}
+
+.specialLink a:link, .specialLink a:visited {
+  background-color: #D48166;
+  color: white;
+  padding: 10px 93px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.specialLink a:hover, .specialLink a:active {
+  background-color: #ab6954;
+}
+
+.navbar-custom {
+  background-color: #D48166;
+  color: white;
+}
+
+.navbar-nav > li > a:hover {
+  background-color: blue;
+}
+
+.box{
+width: 344px;
+height: 200px;
+border: 3px solid #D48166;
+}
+
+</style>
+  
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+
+<nav class="navbar navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a style="color: white" class="navbar-brand" href="#">CS3300</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a style="color: white" href="#">Home</a></li>
+      <li><a style="color: white" href="#">Sign In/Up</a></li>
+      <li><a style="color: white" href="http://localhost/proxy/3000/projects">Projects</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+  <body>
+  <!--     <div style="margin: 5% 0 0 30%;">  -->
+    <div style="text-align:center">
+    <h2>Home Page</h2>   
+    <h2>CS 3300 Portfolio Project - Fall 2022</h2>
+    </div>
+      <div style="padding-left: 45rem;">
+        <!--<h3 style="color: #D48166"> Randall Godinez </h3> -->
         
 
 
         <% if user_signed_in? %>
           
           <div> Welcome <%= current_user.email %> </div>
-          <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => "button" %> 
         
         <% else %>
-          <a href="/users/registrations/"> Sign in</a>
+          <div class="specialLink">
+          <div class="box">
+            <center>
+            <p style="color:#D48166;font-size:16px;">It looks like you are not signed in. 
+            <br>Please sign in or create an account!<p><br></center>
+            <center><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fpluspng.com%2Fimg-png%2Fuser-png-icon-download-icons-logos-emojis-users-2240.png&f=1&nofb=1&ipt=3d3b990d816f5ac415db584c05b1eca841085ac6c57013a7eb5a298ba8edf3b3&ipo=images" height="70px" width="70px" ></center>
+            </div>
+            <a href="/users/registrations/"> Create Account or Sign in</a>
+          </div>
         <% end %>
 
       </div>
