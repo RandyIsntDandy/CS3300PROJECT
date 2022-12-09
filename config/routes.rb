@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "home#index"
   resources :projects
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  get "/:page" => "user#show"
+  #get "/:page" => "user#show"
 
   # Defines the root path route ("/")
   # root "articles#index"
