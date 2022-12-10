@@ -16,53 +16,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-h1 {
-  font-size: 60px;
-
-}
-
-p {
-  font-size: 15px;
-}
-
-.coolHeader{
-
-}
-
-/*Creating the coolHeader that will look cool. this would otherwise mess with all lists.*/
-.coolHeader ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #D48166;
-}
-
-.coolHeader li {
-  float: left;
-}
-
-.coolHeader li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  text-font: arial;
-}
-
-.coolHeader li a:hover {
-  background-color: #ab6954;
-}
-
-/*Resume list that has its own CSS*/
-.resume {
-  text-align: left;
-  border: 2px solid black;
-  margin: 10px;  
-  padding: 10px;
-}
-
 /*Border for the project displays */
 .projectBorder {
   width: 300px;
@@ -70,47 +23,18 @@ p {
   border: 2px solid #D48166;
 }
 
-
-
-/*To have separate looking links for the show project button */
-.specialLink a:link, .specialLink a:visited {
-  background-color: #D48166;
-  color: white;
-  padding: 10px 93px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.specialLink a:hover, .specialLink a:active {
-  background-color: #ab6954;
-}
-
 .button{
   background-color: #A76753;
   color: white;
-  padding: 15px 32px;
+  padding: 10px 26px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   border-radius: 5px;
-  background-color: #D48166;
+  background-color: #BC765F;
   border: 20px;
   margin: auto;
-}
-
-.specialLink a:link, .specialLink a:visited {
-  background-color: #D48166;
-  color: white;
-  padding: 10px 93px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.specialLink a:hover, .specialLink a:active {
-  background-color: #ab6954;
 }
 
 .navbar-custom {
@@ -126,6 +50,9 @@ p {
 width: 344px;
 height: 300px;
 border: 3px solid #D48166;
+background-color: #D48166;
+border-radius: 3px;
+color: white;
 }
 
 </style>
@@ -157,7 +84,7 @@ border: 3px solid #D48166;
 <center>
 <div class="box">
 
-<h2>Sign up</h2>
+<div class="h2">Sign up</div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
@@ -181,7 +108,7 @@ border: 3px solid #D48166;
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", :class => "button"%>
   </div>
 <% end %>
 
